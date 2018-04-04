@@ -1,0 +1,26 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+    	<action name="login">
+            <result>/WEB-INF/jsp/Login.jsp</result>          
+        </action>    
+        <action name="checkLogin" class="bookmanage.web.action.UserAction" method="checkLogin">
+            <result name="success" type="redirect">/index</result>
+            <result name="input">/WEB-INF/jsp/login.jsp</result>
+        </action>
+        <action name="index" class="bookmanage.web.action.BookAction" method="index">
+            <result name="success">/WEB-INF/jsp/index.jsp</result>
+        </action>
+        <action name="fetchById" class="bookmanage.web.action.BookAction" method="fetchById">
+            <result name="success">/WEB-INF/jsp/add.jsp</result>
+        </action>
+        <action name="delete" class="bookmanage.web.action.BookAction" method="delete">
+            <result name="success" type="redirect">/index</result>
+        </action>
+         <action name="alter" class="bookmanage.web.action.BookAction" method="alter">
+            <result name="success" type="redirect">/index</result>
+        </action>
+    </package>
+</struts>
